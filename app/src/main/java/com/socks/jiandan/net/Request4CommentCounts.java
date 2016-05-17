@@ -36,7 +36,7 @@ public class Request4CommentCounts extends Request<ArrayList<CommentNumber>> {
                 if (!jsonObject.isNull(comment_ID)) {
                     CommentNumber commentNumber = new CommentNumber();
                     commentNumber.setComments(jsonObject.getJSONObject(comment_ID).getInt(CommentNumber.COMMENTS));
-                    commentNumber.setThread_id(jsonObject.getJSONObject(comment_ID).getString(CommentNumber.THREAD_ID));
+//                    commentNumber.setThread_id(jsonObject.getJSONObject(comment_ID).getString(CommentNumber.THREAD_ID));
                     commentNumber.setThread_key(jsonObject.getJSONObject(comment_ID).getString(CommentNumber.THREAD_KEY));
                     commentNumbers.add(commentNumber);
                 } else {
