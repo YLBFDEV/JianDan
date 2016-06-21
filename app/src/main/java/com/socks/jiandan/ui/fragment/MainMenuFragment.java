@@ -37,7 +37,7 @@ public class MainMenuFragment extends BaseFragment {
     private LinearLayoutManager mLayoutManager;
     private MainActivity mainActivity;
     private MenuAdapter mAdapter;
-    private MenuItem.FragmentType currentFragment = MenuItem.FragmentType.FreshNews;
+    private MenuItem.FragmentType currentFragment = MenuItem.FragmentType.Joke;
 
     @Override
     public void onAttach(Activity activity) {

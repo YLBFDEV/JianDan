@@ -21,7 +21,7 @@ import com.socks.jiandan.R;
 import com.socks.jiandan.base.BaseActivity;
 import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.NetWorkEvent;
-import com.socks.jiandan.ui.fragment.FreshNewsFragment;
+import com.socks.jiandan.ui.fragment.JokeFragment;
 import com.socks.jiandan.ui.fragment.MainMenuFragment;
 import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShowToast;
@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity {
         mActionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
-        replaceFragment(R.id.frame_container, new FreshNewsFragment());
+        replaceFragment(R.id.frame_container, new JokeFragment());
         replaceFragment(R.id.drawer_container, new MainMenuFragment());
     }
 
