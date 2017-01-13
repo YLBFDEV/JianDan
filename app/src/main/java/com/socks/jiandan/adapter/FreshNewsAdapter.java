@@ -91,11 +91,20 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
         final FreshNews freshNews = mFreshNews.get(position);
 
-        ImageLoadProxy.displayImage(freshNews.getCustomFields().getThumb_m(), holder.img, options);
-        holder.tv_title.setText(freshNews.getTitle());
-        holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
-                .getTitle());
-        holder.tv_views.setText("浏览" + freshNews.getCustomFields().getViews() + "次");
+        try {
+            holder.tv_title.setText(freshNews.getTitle());
+            holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
+                    .getTitle());
+            if(freshNews.getCustomFields().getThumb_m() != null){
+                ImageLoadProxy.displayImage(freshNews.getCustomFields().getThumb_m(), holder.img, options);
+            }
+            if(freshNews.getCustomFields().getViews() != null) {
+                holder.tv_views.setText("浏览" + freshNews.getCustomFields().getViews() + "次");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         if (isLargeMode) {
             holder.tv_share.setOnClickListener(new View.OnClickListener() {
